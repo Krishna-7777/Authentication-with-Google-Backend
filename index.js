@@ -11,7 +11,7 @@ app.use(express.json())
 
     app.get('/re', (ask, give) => {
         let {profile}=require("./google-auth")
-        give.redirect(`https://elegant-tartufo-8af308.netlify.app/status_calling/fe/?token=${profile.t}&name=${profile.name.givenName}&hfh=${profile.t}`);
+        give.redirect(`https://lustrous-liger-6ccfa5.netlify.app/status_calling/fe/?token=${profile.t}&name=${profile.name.givenName}&hfh=${profile.t}`);
     })
 
 app.get('/', (ask, give) => {
