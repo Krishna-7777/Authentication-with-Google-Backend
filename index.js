@@ -11,7 +11,7 @@ app.use(express.json())
 
     app.get('/re', (ask, give) => {
         let {profile}=require("./google-auth")
-        give.redirect(`http://127.0.0.1:5500/frontend/chatify.html?token=${profile.t}&name=${profile.name.givenName}&hfh=${profile.t}`);
+        give.redirect(`https://jade-sorbet-43c990.netlify.app/status_calling/fe/?token=${profile.t}&name=${profile.name.givenName}&hfh=${profile.t}`);
     })
 
 app.get('/', (ask, give) => {
