@@ -42,11 +42,9 @@ userRouter.post('/login', async (ask, give) => {
 
 userRouter.get("/",async(ask,give)=>{
     try {
-        const users = await UserModel.distinct("name", {}, function(err, names) {
-            if (err) throw err;
-            return names
-          })
+        await UserModel.distinct("name", {}, function(err, names) {
           give.send(users)
+          })
       }
      catch (error) {
         console.log(error)
