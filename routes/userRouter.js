@@ -42,13 +42,13 @@ userRouter.post('/login', async (ask, give) => {
 
 userRouter.get("/",async(ask,give)=>{
     try {
-        const users = await UserModel.findAll({
-        attributes: [
-          [Sequelize.fn("DISTINCT", Sequelize.col("name")), "name"],
-        ],
-      });
-      give.send(users)
-    } catch (error) {
+        const users = await UserModel.distinct("name", {}, function(err, names) {
+            if (err) throw err;
+            return names
+          })
+          give.send(users)
+      }
+     catch (error) {
         console.log(error)
         give.send("0")
     }
