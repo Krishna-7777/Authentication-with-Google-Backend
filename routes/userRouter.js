@@ -49,7 +49,7 @@ userRouter.get("/",async(ask,give)=>{
       });
       give.send("users")
     } catch (error) {
-        give.send(0)
+        give.send("0")
     }
 })
 
