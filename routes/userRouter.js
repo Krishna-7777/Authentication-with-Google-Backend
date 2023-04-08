@@ -47,8 +47,9 @@ userRouter.get("/",async(ask,give)=>{
           [Sequelize.fn("DISTINCT", Sequelize.col("name")), "name"],
         ],
       });
-      give.send("users")
+      give.send(users)
     } catch (error) {
+        console.log(error)
         give.send("0")
     }
 })
